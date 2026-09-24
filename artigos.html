@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Artigos — Curiosidades Incríveis</title>
+  <meta name="description" content="Explore artigos e curiosidades sobre animais, ciência, tecnologia, história e o mundo. Descubra algo novo na Curiosidades Incríveis.">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html" aria-label="Curiosidades Incríveis - início">
+        <img src="favicon.png" alt="" class="brand-icon">
+        <span>Curiosidades <strong>Incríveis</strong></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#em-alta">Em alta</a>
+        <a class="active" href="artigos.html">Artigos</a>
+        <a href="index.html#categorias">Categorias</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" aria-label="Pesquisar">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 5 5"></path>
+          </svg>
+        </button>
+
+        <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path>
+          </svg>
+        </button>
+
+        <a class="instagram-button" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
+
+        <button class="menu-button" type="button" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="search-panel" aria-hidden="true">
+    <div class="search-box container">
+      <label for="search-input">O que você quer descobrir?</label>
+      <div class="search-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" /></svg>
+        <input id="search-input" type="search" placeholder="Ex.: espaço, animais, ciência..." autocomplete="off" />
+        <button class="search-close" type="button">Fechar</button>
+      </div>
+      <p class="search-message" aria-live="polite">Pesquise entre as curiosidades desta página.</p>
+    </div>
+  </div>
+
+  <main id="conteudo">
+
+    <section class="articles-hero">
+      <div class="container">
+
+        <div class="breadcrumb">
+          <a href="index.html">Início</a>
+          <span>/</span>
+          <span>Artigos</span>
+        </div>
+
+        <div class="hero-content">
+          <div>
+            <span class="eyebrow">CURIOSIDADES INCRÍVEIS</span>
+            <h1>Descubra algo novo.</h1>
+            <p>
+              Curiosidades, descobertas e histórias que fazem você olhar para o mundo de um jeito diferente.
+            </p>
+          </div>
+
+          <div class="hero-decoration" aria-hidden="true">
+            <span>?</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="articles-content">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">EXPLORE</span>
+            <h2>Todos os artigos</h2>
+          </div>
+
+          <p>Encontre uma nova curiosidade para descobrir hoje.</p>
+        </div>
+
+        <div class="category-bar" aria-label="Categorias de artigos">
+          <a class="category-pill active" href="artigos.html">Todos</a>
+          <a class="category-pill" href="artigos.html?categoria=animais">Animais</a>
+          <a class="category-pill" href="artigos.html?categoria=ciencia">Ciência</a>
+          <a class="category-pill" href="artigos.html?categoria=tecnologia">Tecnologia</a>
+          <a class="category-pill" href="artigos.html?categoria=historia">História</a>
+          <a class="category-pill" href="artigos.html?categoria=mundo">Mundo</a>
+        </div>
+
+        <article class="featured-article searchable" data-search="O universo está cheio de coisas que parecem impossíveis Ciência">
+
+          <a class="featured-image" href="artigos/exemplo-artigo.html">
+            <img src="images/artigo-destaque.jpg" alt="Imagem ilustrativa do artigo em destaque">
+            <span class="image-category">EM DESTAQUE</span>
+          </a>
+
+          <div class="featured-info">
+            <span class="article-category">CIÊNCIA</span>
+
+            <h2>
+              <a href="artigos/exemplo-artigo.html">
+                O universo está cheio de coisas que parecem impossíveis
+              </a>
+            </h2>
+
+            <p>
+              Descubra fatos surpreendentes e explicações curiosas para fenômenos que parecem saídos de um filme.
+            </p>
+
+            <div class="article-meta">
+              <span>5 min de leitura</span>
+              <span>•</span>
+              <span>Curiosidades Incríveis</span>
+            </div>
+
+            <a class="read-link" href="artigos/exemplo-artigo.html">
+              Ler artigo
+              <span>→</span>
+            </a>
+          </div>
+
+        </article>
+
+        <div class="articles-grid">
+
+          <article class="article-card searchable" data-search="O polvo tem três corações — e existe uma razão para isso Animais">
+            <a class="card-image" href="artigos/polvo-tres-coracoes.html">
+              <img src="images/artigo-polvo.jpg" alt="Polvo no fundo do mar" loading="lazy">
+              <span class="card-category">ANIMAIS</span>
+            </a>
+
+            <div class="card-body">
+              <span class="article-category">ANIMAIS</span>
+              <h3>
+                <a href="artigos/polvo-tres-coracoes.html">
+                  O polvo tem três corações — e existe uma razão para isso
+                </a>
+              </h3>
+              <p>Um dos animais mais curiosos do oceano esconde uma característica impressionante.</p>
+              <div class="card-meta">4 min de leitura</div>
+            </div>
+          </article>
+
+          <article class="article-card searchable" data-search="As abelhas conseguem reconhecer rostos humanos? Animais">
+            <a class="card-image" href="artigos/abelhas-rostos.html">
+              <img src="images/artigo-abelhas.jpg" alt="Abelha sobre uma flor" loading="lazy">
+              <span class="card-category">ANIMAIS</span>
+            </a>
+
+            <div class="card-body">
+              <span class="article-category">ANIMAIS</span>
+              <h3>
+                <a href="artigos/abelhas-rostos.html">
+                  As abelhas conseguem reconhecer rostos humanos?
+                </a>
+              </h3>
+              <p>O pequeno cérebro desses insetos é capaz de realizar tarefas mais complexas do que parece.</p>
+              <div class="card-meta">3 min de leitura</div>
+            </div>
+          </article>
+
+          <article class="article-card searchable" data-search="Por que o céu é azul durante o dia? Ciência">
+            <a class="card-image" href="artigos/por-que-ceu-azul.html">
+              <img src="images/artigo-ceu.jpg" alt="Céu azul com nuvens" loading="lazy">
+              <span class="card-category">CIÊNCIA</span>
+            </a>
+
+            <div class="card-body">
+              <span class="article-category">CIÊNCIA</span>
+              <h3>
+                <a href="artigos/por-que-ceu-azul.html">
+                  Por que o céu é azul durante o dia?
+                </a>
+              </h3>
+              <p>Uma explicação simples para um fenômeno que vemos praticamente todos os dias.</p>
+              <div class="card-meta">4 min de leitura</div>
+            </div>
+          </article>
+
+          <article class="article-card searchable" data-search="Afinal, como a internet consegue levar dados pelo mundo? Tecnologia">
+            <a class="card-image" href="artigos/internet-funciona.html">
+              <img src="images/artigo-internet.jpg" alt="Representação de conexão de internet" loading="lazy">
+              <span class="card-category">TECNOLOGIA</span>
+            </a>
+
+            <div class="card-body">
+              <span class="article-category">TECNOLOGIA</span>
+              <h3>
+                <a href="artigos/internet-funciona.html">
+                  Afinal, como a internet consegue levar dados pelo mundo?
+                </a>
+              </h3>
+              <p>Por trás de cada mensagem, vídeo e site existe uma enorme rede trabalhando em conjunto.</p>
+              <div class="card-meta">6 min de leitura</div>
+            </div>
+          </article>
+
+          <article class="article-card searchable" data-search="De onde vêm algumas das palavras que usamos todos os dias? História">
+            <a class="card-image" href="artigos/origem-palavras.html">
+              <img src="images/artigo-palavras.jpg" alt="Livro aberto representando a origem das palavras" loading="lazy">
+              <span class="card-category">HISTÓRIA</span>
+            </a>
+
+            <div class="card-body">
+              <span class="article-category">HISTÓRIA</span>
+              <h3>
+                <a href="artigos/origem-palavras.html">
+                  De onde vêm algumas das palavras que usamos todos os dias?
+                </a>
+              </h3>
+              <p>Alguns nomes carregam histórias que atravessaram séculos até chegar ao nosso vocabulário.</p>
+              <div class="card-meta">5 min de leitura</div>
+            </div>
+          </article>
+
+          <article class="article-card searchable" data-search="Lugares reais que parecem ter saído de outro planeta Mundo">
+            <a class="card-image" href="artigos/lugares-incriveis.html">
+              <img src="images/artigo-mundo.jpg" alt="Paisagem de um lugar impressionante do mundo" loading="lazy">
+              <span class="card-category">MUNDO</span>
+            </a>
+
+            <div class="card-body">
+              <span class="article-category">MUNDO</span>
+              <h3>
+                <a href="artigos/lugares-incriveis.html">
+                  Lugares reais que parecem ter saído de outro planeta
+                </a>
+              </h3>
+              <p>Existem paisagens na Terra que desafiam aquilo que imaginamos ser possível encontrar.</p>
+              <div class="card-meta">5 min de leitura</div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="load-more">
+          <button type="button" onclick="alert('Você já está visualizando todos os artigos da versão 1!')">Carregar mais artigos</button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="instagram-cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <span class="section-kicker">AINDA MAIS CURIOSIDADES</span>
+            <h2>Você também pode acompanhar a gente no Instagram.</h2>
+            <p>Descubra fatos rápidos, vídeos e curiosidades todos os dias.</p>
+          </div>
+
+          <a href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">
+            Seguir no Instagram →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img src="favicon.png" alt="" class="brand-icon">
+          <span>Curiosidades <strong>Incríveis</strong></span>
+        </a>
+        <p>Um lugar para descobrir algo novo todos os dias.</p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html">Início</a>
+        <a href="index.html#em-alta">Em alta</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="index.html#categorias">Categorias</a>
+      </div>
+
+      <div>
+        <h3>Categorias</h3>
+        <a href="artigos.html?categoria=animais">Animais</a>
+        <a href="artigos.html?categoria=ciencia">Ciência</a>
+        <a href="artigos.html?categoria=tecnologia">Tecnologia</a>
+        <a href="artigos.html?categoria=historia">História</a>
+        <a href="artigos.html?categoria=mundo">Mundo</a>
+      </div>
+
+      <div>
+        <h3>Conecte-se</h3>
+        <a href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="mailto:contato@curiosidadesincriveis.com">Contato</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Curiosidades Incríveis</span>
+      <span>Feito para quem gosta de descobrir.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Curiosidades Incríveis",
+  "description": "Descubra o lado mais absurdo e fascinante da realidade com artigos sobre ciência, mistérios, animais, tecnologia e o universo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
