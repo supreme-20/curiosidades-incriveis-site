@@ -3,11 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curiosidades Incríveis — Descubra algo novo todos os dias</title>
     <meta
       name="description"
-      content="Curiosidades Incríveis: fatos surpreendentes sobre animais, ciência, tecnologia, história e o mundo."
+      content="Explore fatos fascinantes sobre animais, ciência, tecnologia, história e os maiores mistérios do mundo. Descubra o lado mais incrível da realidade."
     />
-    <title>Curiosidades Incríveis — Descubra algo novo</title>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Curiosidades Incríveis" />
+    <link rel="canonical" href="https://curiosidadesincriveis.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Curiosidades Incríveis — Descubra algo novo todos os dias" />
+    <meta property="og:description" content="Explore fatos fascinantes sobre animais, ciência, tecnologia, história e os maiores mistérios do mundo." />
+    <meta property="og:url" content="https://curiosidadesincriveis.com/" />
+    <meta property="og:site_name" content="Curiosidades Incríveis" />
+    <meta property="og:image" content="images/banner-curiosidades-incriveis.png" />
+    <meta property="og:image:alt" content="Banner cósmico Curiosidades Incríveis" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Curiosidades Incríveis — Descubra algo novo todos os dias" />
+    <meta name="twitter:description" content="Explore fatos fascinantes sobre animais, ciência, tecnologia, história e os maiores mistérios do mundo." />
+    <meta name="twitter:image" content="images/banner-curiosidades-incriveis.png" />
+
     <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,6 +36,39 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://curiosidadesincriveis.com/#organization",
+          "name": "Curiosidades Incríveis",
+          "url": "https://curiosidadesincriveis.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://curiosidadesincriveis.com/favicon.png"
+          },
+          "sameAs": [
+            "https://www.instagram.com/curiosidades.incriveis6"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://curiosidadesincriveis.com/#website",
+          "url": "https://curiosidadesincriveis.com/",
+          "name": "Curiosidades Incríveis",
+          "description": "Fatos surpreendentes sobre animais, ciência, tecnologia, história e o mundo.",
+          "publisher": {
+            "@id": "https://curiosidadesincriveis.com/#organization"
+          },
+          "inLanguage": "pt-BR"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -31,35 +84,10 @@
         <!-- MENU DESKTOP -->
         <nav class="main-nav" aria-label="Navegação principal">
           <a class="active" href="index.html">Início</a>
+          <a href="#em-alta">Em alta</a>
+          <a href="#recentes">Recentes</a>
+          <a href="#categorias">Categorias</a>
           <a href="artigos.html">Artigos</a>
-          
-          <div class="nav-dropdown">
-            <button class="nav-dropdown-trigger" type="button" aria-expanded="false">
-              Categorias
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="nav-dropdown-menu">
-              <a class="nav-dropdown-item" href="artigos.html?categoria=animais">
-                <span class="item-icon">🐾</span> Animais
-              </a>
-              <a class="nav-dropdown-item" href="artigos.html?categoria=ciencia">
-                <span class="item-icon">🔬</span> Ciência
-              </a>
-              <a class="nav-dropdown-item" href="artigos.html?categoria=tecnologia">
-                <span class="item-icon">💻</span> Tecnologia
-              </a>
-              <a class="nav-dropdown-item" href="artigos.html?categoria=historia">
-                <span class="item-icon">📜</span> História
-              </a>
-              <a class="nav-dropdown-item" href="artigos.html?categoria=mundo">
-                <span class="item-icon">🌍</span> Mundo
-              </a>
-            </div>
-          </div>
-
-          <button class="nav-surprise-btn" type="button" title="Descobrir um fato aleatório">
-            <span>🎲</span> Surpreenda-me
-          </button>
         </nav>
 
         <!-- AÇÕES DO TOPO -->
@@ -71,7 +99,7 @@
             <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
             <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z" /></svg>
           </button>
-          <a class="instagram-link" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+          <a class="instagram-button" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer">Instagram ↗</a>
           <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
@@ -133,14 +161,23 @@
         <div class="hero-background" role="img" aria-label="Banner cósmico Curiosidades Incríveis"></div>
         <div class="container hero-content">
           <p class="eyebrow"><span></span> em destaque</p>
-          <h1>O universo está cheio de coisas que parecem impossíveis.</h1>
-          <p class="hero-copy">E a melhor parte é que muitas delas são reais. Descubra fatos que transformam a forma de enxergar o mundo.</p>
+          <h1>
+            O universo está cheio<br />
+            de coisas que parecem<br />
+            impossíveis.
+          </h1>
+          <p class="hero-copy">
+            E a melhor parte é que muitas delas são reais. Descubra fatos que transformam a forma de enxergar o mundo.
+          </p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a class="button button-primary" href="artigos/exemplo-artigo.html">Ler artigo em destaque <span aria-hidden="true">→</span></a>
-            <a class="button button-light" href="artigos.html">Ver todos os artigos</a>
+            <a class="button button-primary" href="artigos/exemplo-artigo.html">
+              Ler agora <span aria-hidden="true">→</span>
+            </a>
+            <a class="button button-light" href="artigos.html">
+              Ver todos os artigos
+            </a>
           </div>
         </div>
-        <div class="hero-stat"><strong>+50 mil</strong><span>pessoas curiosas<br />na comunidade</span></div>
       </section>
 
       <!-- TICKER CÓSMICO "VOCÊ SABIA?" -->
