@@ -110,6 +110,52 @@ export default function App() {
   const recentArticles = useMemo(() => ARTICLES_DATA.slice(3, 8), []);
   const popularArticles = useMemo(() => ARTICLES_DATA.filter((a) => a.popular).slice(0, 3), []);
 
+  // Contador de seguidores animado com efeito "Ao Vivo" (Instagram @curiosidades.incriveis6)
+  const [followerCount, setFollowerCount] = useState<number>(55900);
+  const [isCounterHighlighted, setIsCounterHighlighted] = useState<boolean>(false);
+
+  useEffect(() => {
+    const baseFollowers = 55940;
+    const now = new Date();
+    const dayMinutes = now.getHours() * 60 + now.getMinutes();
+    const organicVariation = Math.floor(dayMinutes / 18);
+    const target = baseFollowers + organicVariation;
+
+    const startVal = Math.max(0, target - 120);
+    const duration = 1800;
+    const startTime = performance.now();
+
+    let animationFrameId: number;
+
+    const update = (time: number) => {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.floor(startVal + (target - startVal) * ease);
+      setFollowerCount(current);
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(update);
+      } else {
+        setFollowerCount(target);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(update);
+
+    // Micro-incremento sutil a cada 60s simulando novo engajamento
+    const interval = setInterval(() => {
+      setFollowerCount((prev) => prev + 1);
+      setIsCounterHighlighted(true);
+      setTimeout(() => setIsCounterHighlighted(false), 600);
+    }, 60000);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <div className={searchOpen ? 'search-open' : ''}>
       <a className="skip-link" href="#conteudo">
@@ -328,14 +374,34 @@ export default function App() {
                   </button>
                 </div>
               </div>
-              <div className="hero-stat">
-                <strong>+50 mil</strong>
-                <span>
-                  mentes curiosas
-                  <br />
-                  na comunidade
+              <a
+                className="hero-stat"
+                href="https://www.instagram.com/curiosidades.incriveis6"
+                target="_blank"
+                rel="noreferrer"
+                title="Ver comunidade oficial no Instagram @curiosidades.incriveis6"
+              >
+                <div className="hero-stat-info">
+                  <div className="hero-stat-header">
+                    <strong
+                      style={{
+                        color: isCounterHighlighted ? '#4ade80' : '#ffffff',
+                        transition: 'color 0.4s ease',
+                      }}
+                    >
+                      +{followerCount.toLocaleString('pt-BR')}
+                    </strong>
+                    <div className="hero-stat-live">
+                      <span className="live-dot" aria-hidden="true"></span>
+                      <span>AO VIVO</span>
+                    </div>
+                  </div>
+                  <span className="hero-stat-label">mentes curiosas no Instagram</span>
+                </div>
+                <span className="hero-stat-arrow" aria-hidden="true">
+                  ↗
                 </span>
-              </div>
+              </a>
             </section>
 
             {/* Em Alta Section */}
@@ -511,7 +577,7 @@ export default function App() {
                   </p>
                   <h2>Siga a Curiosidades Incríveis no Instagram.</h2>
                   <p className="text-white/80 mt-2 text-base">
-                    Descubra fatos rápidos, carrosséis explicativos e vídeos diários com mais de 50 mil seguidores.
+                    Descubra fatos rápidos, carrosséis explicativos e vídeos diários com mais de 55 mil seguidores.
                   </p>
                 </div>
                 <a

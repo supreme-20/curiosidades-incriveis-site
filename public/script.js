@@ -803,3 +803,72 @@ if (catParam) {
     }
   });
 }
+
+// =========================================================
+// CONTADOR AO VIVO DE COMUNIDADE (INSTAGRAM @curiosidades.incriveis6)
+// =========================================================
+(function initFollowerCounter() {
+  const counterEl = document.getElementById('live-follower-counter');
+  if (!counterEl) return;
+
+  // Número base atual de seguidores (fácil de editar quando a página atingir novas marcas!)
+  const BASE_FOLLOWERS = 55940;
+  
+  // Variação orgânica sutil baseada no tempo do dia (simulação de pulso contínuo)
+  const now = new Date();
+  const dayMinutes = now.getHours() * 60 + now.getMinutes();
+  const organicVariation = Math.floor(dayMinutes / 18); // adiciona pequenos seguidores ao longo do dia
+  const targetCount = BASE_FOLLOWERS + organicVariation;
+
+  let currentCount = Math.max(0, targetCount - 120); // começa ligeiramente abaixo para a animação
+  const duration = 1800; // 1.8 segundos de animação inicial
+  const startTime = performance.now();
+
+  function formatNumber(num) {
+    return '+' + num.toLocaleString('pt-BR');
+  }
+
+  function easeOutExpo(x) {
+    return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+  }
+
+  function updateCounter(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = easeOutExpo(progress);
+
+    const val = Math.floor(currentCount + (targetCount - currentCount) * easedProgress);
+    counterEl.textContent = formatNumber(val);
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
+    } else {
+      counterEl.textContent = formatNumber(targetCount);
+      // Pulso orgânico sutil a cada 45-90 segundos (novo seguidor engajando)
+      setupOrganicTick(targetCount);
+    }
+  }
+
+  function setupOrganicTick(count) {
+    let runningCount = count;
+    function scheduleNext() {
+      const delay = Math.floor(Math.random() * (90000 - 45000)) + 45000;
+      setTimeout(() => {
+        runningCount += 1;
+        if (counterEl) {
+          counterEl.textContent = formatNumber(runningCount);
+          // Efeito de flash suave verde/dourado ao subir
+          counterEl.style.color = '#4ade80';
+          setTimeout(() => {
+            if (counterEl) counterEl.style.color = '#ffffff';
+          }, 600);
+        }
+        scheduleNext();
+      }, delay);
+    }
+    scheduleNext();
+  }
+
+  requestAnimationFrame(updateCounter);
+})();
+
