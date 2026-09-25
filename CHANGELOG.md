@@ -4,7 +4,19 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.0.1] - 2026-09-25 (Versão Atual)
+## [v3.0.2] - 2026-09-25 (Versão Atual)
+### 📱 Correção de Layout Mobile & Lapidação do Hero:
+- **Alinhamento Vertical Natural do Hero:**
+  - Corrigido o fluxo de exibição para que cada elemento fique estritamente um abaixo do outro na vertical: `[— EM DESTAQUE]` ➔ `[Título Principal H1]` ➔ `[Subtítulo / Descrição]` ➔ `[Botões de Ação]`.
+  - Botões `Ler agora →` e `Ver todos os artigos` agora se adaptam com quebra responsiva limpa e 100% visíveis em qualquer celular, sem truncamento.
+- **Cor Oficial do Eyebrow:**
+  - A palavra e o traço `— EM DESTAQUE` agora utilizam exatamente o azul cósmico oficial da paleta (`var(--blue)` / `#169eff`), exatamente como na referência visual do design.
+- **Imagem de Fundo e Desfoque Preservados:**
+  - O desfoque cósmico (`blur(2.6px)`), iluminação e camadas da arte de fundo permanecem intocados e perfeitos tanto no desktop quanto no mobile.
+
+---
+
+## [v3.0.1] - 2026-09-25
 ### 📈 Ajustes & Calibração da Comunidade:
 - **Calibração de Base do Instagram:**
   - Ajustado o número base para **55.940 seguidores**, permitindo que o efeito orgânico ao vivo continue subindo e ultrapasse naturalmente a barreira dos 56.000 seguidores em perfeita harmonia com o crescimento real da página.

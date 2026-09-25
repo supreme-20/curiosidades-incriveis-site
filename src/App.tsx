@@ -353,7 +353,7 @@ export default function App() {
                   E a melhor parte é que muitas delas são reais. Descubra fatos surpreendentes que transformam a
                   forma de enxergar a ciência, a natureza e o mundo ao seu redor.
                 </p>
-                <div className="flex gap-3 flex-wrap">
+                <div className="hero-buttons flex gap-5 flex-wrap items-center">
                   <button
                     className="button button-primary cursor-pointer"
                     onClick={() => {
@@ -361,7 +361,7 @@ export default function App() {
                       handleOpenArticle(featuredItem);
                     }}
                   >
-                    Ler artigo em destaque <ArrowRight className="w-4 h-4" />
+                    Ler agora <ArrowRight className="w-4 h-4 ml-1" />
                   </button>
                   <button
                     className="button button-light cursor-pointer"
