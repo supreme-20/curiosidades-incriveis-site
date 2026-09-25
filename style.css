@@ -134,7 +134,7 @@ button {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 29px;
+  gap: 22px;
   margin-left: auto;
 }
 
@@ -166,6 +166,122 @@ button {
   height: 2px;
   background: var(--blue);
   border-radius: 2px;
+}
+
+/* Dropdown de Categorias */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown-trigger {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown:hover .nav-dropdown-trigger,
+.nav-dropdown.is-active .nav-dropdown-trigger {
+  color: var(--blue);
+}
+
+.nav-dropdown-trigger svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  fill: none;
+  transition: transform 0.2s;
+}
+
+.nav-dropdown:hover .nav-dropdown-trigger svg,
+.nav-dropdown.is-active .nav-dropdown-trigger svg {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  padding: 8px;
+  min-width: 210px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.is-active .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: var(--text) !important;
+  font-size: 0.84rem !important;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-dropdown-item:hover {
+  background: color-mix(in srgb, var(--blue) 12%, transparent);
+  color: var(--blue) !important;
+}
+
+.nav-dropdown-item .item-icon {
+  font-size: 1.05rem;
+  width: 22px;
+  text-align: center;
+}
+
+/* Botão Surpreenda-me no Menu */
+.nav-surprise-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: color-mix(in srgb, var(--blue) 12%, transparent);
+  color: var(--blue);
+  border: 1px solid color-mix(in srgb, var(--blue) 30%, transparent);
+  border-radius: 20px;
+  padding: 6px 13px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.nav-surprise-btn:hover {
+  background: var(--blue);
+  color: #030a16;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(82, 178, 255, 0.3);
 }
 
 .header-actions {
@@ -1609,4 +1725,363 @@ h1 {
   .hero h1 {
     font-size: 2.55rem;
   }
+}
+
+/* =========================================================
+   TICKER CÓSMICO "VOCÊ SABIA?"
+   ========================================================= */
+.ticker-bar {
+  background: color-mix(in srgb, var(--surface) 90%, var(--blue) 10%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.ticker-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ticker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blue);
+  color: #030a16;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ticker-content {
+  flex: 1;
+  font-size: 0.88rem;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.ticker-content strong {
+  color: var(--yellow);
+}
+
+.ticker-next-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  padding: 4px 10px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ticker-next-btn:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 8%, transparent);
+}
+
+/* =========================================================
+   CARD INTERATIVO: CURIOSIDADE ALEATÓRIA (SURPREENDA-ME)
+   ========================================================= */
+.surprise-box {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 12%, transparent) 0%, color-mix(in srgb, var(--yellow) 10%, transparent) 100%), var(--surface);
+  border: 1px solid color-mix(in srgb, var(--blue) 35%, var(--line));
+  border-radius: 18px;
+  padding: 34px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.surprise-box::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, var(--blue) 0%, transparent 70%);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.surprise-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.surprise-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.surprise-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--yellow);
+  background: rgba(255, 134, 20, 0.12);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 134, 20, 0.3);
+}
+
+.surprise-fact {
+  font-family: var(--font-title);
+  font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+  line-height: 1.45;
+  color: var(--text);
+  margin-bottom: 22px;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.surprise-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.surprise-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue);
+  color: #030a16;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.surprise-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(82, 178, 255, 0.35);
+}
+
+.surprise-link {
+  color: var(--blue);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.surprise-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* =========================================================
+   FILTROS RÁPIDOS NA HOME
+   ========================================================= */
+.home-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.home-filters .filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 15px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.home-filters .filter-pill:hover {
+  border-color: var(--blue);
+  color: var(--text);
+}
+
+.home-filters .filter-pill.active {
+  background: var(--blue);
+  color: #030a16;
+  border-color: var(--blue);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(82, 178, 255, 0.25);
+}
+
+/* =========================================================
+   MOBILE DRAWER (GAVETA LATERAL PROFISSONAL)
+   ========================================================= */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 10, 22, 0.75);
+  backdrop-filter: blur(5px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: min(85vw, 320px);
+  height: 100vh;
+  background: var(--surface);
+  border-left: 1px solid var(--line);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.55);
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.mobile-drawer.is-open {
+  right: 0;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+}
+
+.drawer-close {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.drawer-close:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.drawer-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.drawer-nav a:hover,
+.drawer-nav a.active {
+  background: color-mix(in srgb, var(--blue) 12%, transparent);
+  color: var(--blue);
+}
+
+.drawer-section-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 18px 0 8px 14px;
+}
+
+.drawer-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.drawer-categories a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.drawer-categories a:hover {
+  background: color-mix(in srgb, var(--blue) 10%, transparent);
+  color: var(--blue);
+}
+
+.drawer-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+body.drawer-open {
+  overflow: hidden;
 }

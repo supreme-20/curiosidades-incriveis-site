@@ -23,24 +23,69 @@
 
       <nav class="main-nav" aria-label="Navegação principal">
         <a href="../index.html">Início</a>
-        <a href="../index.html#em-alta">Em alta</a>
-        <a class="active" href="../artigos.html">Artigos</a>
-        <a href="../index.html#categorias">Categorias</a>
+        <a href="../artigos.html">Artigos</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false">
+            Categorias
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=animais"><span class="item-icon">🐾</span> Animais</a>
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=ciencia"><span class="item-icon">🔬</span> Ciência</a>
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=tecnologia"><span class="item-icon">💻</span> Tecnologia</a>
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=historia"><span class="item-icon">📜</span> História</a>
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=mundo"><span class="item-icon">🌍</span> Mundo</a>
+          </div>
+        </div>
+        <a class="nav-surprise-btn" href="../index.html#curiosidade-aleatoria"><span>🎲</span> Surpreenda-me</a>
       </nav>
 
       <div class="header-actions">
-        <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path></svg>
+        <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema" title="Mudar tema">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z" /></svg>
         </button>
-        <a class="instagram-button" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">
-          Instagram
+        <a class="instagram-link" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">
+          Instagram <span aria-hidden="true">↗</span>
         </a>
-        <button class="menu-button" type="button" aria-label="Abrir menu">
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
+
+  <!-- GAVETA LATERAL MOBILE (DRAWER) -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Menu móvel">
+    <div class="drawer-header">
+      <a class="brand" href="../index.html">
+        <img class="brand-logo" src="../favicon.png" alt="" />
+        <span>Curiosidades <strong>Incríveis</strong></span>
+      </a>
+      <button class="drawer-close" id="drawer-close" type="button" aria-label="Fechar menu">✕</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="../index.html">🏠 Início</a>
+      <a href="../artigos.html">📚 Todos os Artigos</a>
+      <a class="nav-surprise-btn drawer-surprise-btn" href="../index.html#curiosidade-aleatoria" style="margin: 8px 0; justify-content: center;">
+        <span>🎲</span> Curiosidade Aleatória
+      </a>
+      <div class="drawer-section-title">Categorias</div>
+      <div class="drawer-categories">
+        <a href="../artigos.html?categoria=animais">🐾 Animais</a>
+        <a href="../artigos.html?categoria=ciencia">🔬 Ciência</a>
+        <a href="../artigos.html?categoria=tecnologia">💻 Tecnologia</a>
+        <a href="../artigos.html?categoria=historia">📜 História</a>
+        <a href="../artigos.html?categoria=mundo">🌍 Mundo</a>
+      </div>
+    </nav>
+    <div class="drawer-footer">
+      <a class="instagram-button" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer" style="justify-content: center;">
+        Seguir no Instagram ↗
+      </a>
+    </div>
+  </div>
 
   <main id="conteudo">
     <article class="article-page container">
