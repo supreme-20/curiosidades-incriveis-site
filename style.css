@@ -442,12 +442,12 @@ button {
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: 480px;
+  min-height: 400px;
   display: flex;
   align-items: center;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  padding: 40px 0 50px;
+  padding: 30px 0 35px;
 }
 
 .hero-background {
@@ -488,22 +488,29 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 780px;
-  padding: 10px 0;
+  text-align: left;
+  max-width: 720px;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  margin: 0 0 14px;
+  margin: 0 0 12px 0;
+  padding: 0;
   color: var(--blue) !important;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  text-align: left;
+  align-self: flex-start;
 }
 
 .eyebrow span {
@@ -530,29 +537,37 @@ h1, h2, h3 {
 }
 
 h1 {
-  max-width: 740px;
-  margin-bottom: 16px;
-  font-size: clamp(2.2rem, 4.4vw, 3.8rem);
-  line-height: 1.04;
+  max-width: 700px;
+  margin: 0 0 14px 0;
+  padding: 0;
+  font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+  line-height: 1.05;
   letter-spacing: -0.045em;
   color: #ffffff;
+  text-align: left;
+  align-self: flex-start;
 }
 
 .hero-copy {
-  max-width: 540px;
-  margin-bottom: 24px;
+  max-width: 520px;
+  margin: 0 0 20px 0;
+  padding: 0;
   color: #d6deed;
-  font-size: 0.98rem;
-  line-height: 1.62;
+  font-size: 0.94rem;
+  line-height: 1.58;
+  text-align: left;
+  align-self: flex-start;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .button {
