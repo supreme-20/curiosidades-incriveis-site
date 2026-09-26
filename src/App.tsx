@@ -278,6 +278,121 @@ export default function App() {
         </div>
       </header>
 
+      {/* GAVETA LATERAL MOBILE (DRAWER) */}
+      <div
+        className={`drawer-overlay ${mobileMenuOpen ? 'is-open' : ''}`}
+        id="drawer-overlay"
+        onClick={() => setMobileMenuOpen(false)}
+      ></div>
+      <div
+        className={`mobile-drawer ${mobileMenuOpen ? 'is-open' : ''}`}
+        id="mobile-drawer"
+        aria-label="Menu móvel"
+      >
+        <div className="drawer-header">
+          <button
+            type="button"
+            className="brand bg-transparent border-0 cursor-pointer text-left flex items-center gap-3"
+            onClick={() => {
+              setCurrentView('home');
+              setMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <img className="brand-logo" src="/favicon.png" alt="" />
+            <span>
+              Curiosidades <strong>Incríveis</strong>
+            </span>
+          </button>
+          <button
+            className="drawer-close"
+            id="drawer-close"
+            type="button"
+            aria-label="Fechar menu"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            ✕
+          </button>
+        </div>
+
+        <nav className="drawer-nav">
+          <button
+            type="button"
+            className={currentView === 'home' ? 'active' : ''}
+            onClick={() => {
+              setCurrentView('home');
+              setMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            🏠 Início
+          </button>
+          <button
+            type="button"
+            className={currentView === 'articles' ? 'active' : ''}
+            onClick={() => {
+              setCurrentView('articles');
+              setSelectedCategory('Todos');
+              setMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            📚 Todos os Artigos
+          </button>
+          <button
+            className="nav-surprise-btn drawer-surprise-btn"
+            type="button"
+            style={{ margin: '8px 0', justifyContent: 'center' }}
+            onClick={() => {
+              handleSurprise();
+              setMobileMenuOpen(false);
+            }}
+          >
+            <span>🎲</span> Curiosidade Aleatória
+          </button>
+
+          <div className="drawer-section-title">Categorias</div>
+          <div className="drawer-categories">
+            {categories.slice(1).map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => {
+                  setSelectedCategory(cat);
+                  setCurrentView('articles');
+                  setMobileMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              >
+                <span>
+                  {cat === 'Espaço' ? '🪐' :
+                   cat === 'Ciência' ? '🔬' :
+                   cat === 'Natureza' ? '🌿' :
+                   cat === 'História' ? '📜' :
+                   cat === 'Tecnologia' ? '💻' :
+                   cat === 'Mente Humana' ? '🧠' :
+                   cat === 'Animais' ? '🐾' :
+                   cat === 'Mundo' ? '🌍' : '✨'}
+                </span>{' '}
+                {cat}
+              </button>
+            ))}
+          </div>
+        </nav>
+
+        <div className="drawer-footer">
+          <a
+            className="instagram-button"
+            href="https://www.instagram.com/curiosidades.incriveis6"
+            target="_blank"
+            rel="noreferrer"
+            style={{ justifyContent: 'center' }}
+          >
+            Seguir no Instagram ↗
+          </a>
+        </div>
+      </div>
+
       {/* Search Overlay Panel */}
       {searchOpen && (
         <div className="search-panel" aria-modal="true" role="dialog">

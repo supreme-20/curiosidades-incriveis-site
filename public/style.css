@@ -2097,15 +2097,19 @@ h1 {
   right: -320px;
   width: min(85vw, 320px);
   height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
   background: var(--surface);
   border-left: 1px solid var(--line);
   z-index: 999;
   display: flex;
   flex-direction: column;
-  padding: 24px 20px;
+  padding: 20px 18px;
+  padding-bottom: max(24px, env(safe-area-inset-bottom, 24px));
   box-shadow: -10px 0 35px rgba(0, 0, 0, 0.55);
   transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-drawer.is-open {
@@ -2116,9 +2120,10 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 18px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
-  margin-bottom: 20px;
+  margin-bottom: 14px;
+  flex-shrink: 0;
 }
 
 .drawer-close {
@@ -2144,9 +2149,13 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
-.drawer-nav a {
+.drawer-nav a,
+.drawer-nav button {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -2156,11 +2165,18 @@ h1 {
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
 
 .drawer-nav a:hover,
-.drawer-nav a.active {
+.drawer-nav a.active,
+.drawer-nav button:hover,
+.drawer-nav button.active {
   background: color-mix(in srgb, var(--blue) 12%, transparent);
   color: var(--blue);
 }
@@ -2171,7 +2187,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
-  margin: 18px 0 8px 14px;
+  margin: 14px 0 6px 12px;
 }
 
 .drawer-categories {
@@ -2180,7 +2196,8 @@ h1 {
   gap: 4px;
 }
 
-.drawer-categories a {
+.drawer-categories a,
+.drawer-categories button {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -2189,21 +2206,36 @@ h1 {
   color: var(--muted);
   font-size: 0.88rem;
   text-decoration: none;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
 
-.drawer-categories a:hover {
+.drawer-categories a:hover,
+.drawer-categories button:hover {
   background: color-mix(in srgb, var(--blue) 10%, transparent);
   color: var(--blue);
 }
 
 .drawer-footer {
-  margin-top: auto;
-  padding-top: 24px;
+  margin-top: 14px;
+  padding-top: 14px;
+  padding-bottom: 6px;
   border-top: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.drawer-footer .instagram-button {
+  width: 100%;
+  justify-content: center;
+  padding: 12px 16px;
+  font-size: 0.88rem;
 }
 
 body.drawer-open {
