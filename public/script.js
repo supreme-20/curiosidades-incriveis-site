@@ -812,16 +812,16 @@ if (catParam) {
   if (!counterEl) return;
 
   // Número base atual de seguidores (fácil de editar quando a página atingir novas marcas!)
-  const BASE_FOLLOWERS = 55940;
+  const BASE_FOLLOWERS = 56200;
   
   // Variação orgânica sutil baseada no tempo do dia (simulação de pulso contínuo)
   const now = new Date();
   const dayMinutes = now.getHours() * 60 + now.getMinutes();
-  const organicVariation = Math.floor(dayMinutes / 18); // adiciona pequenos seguidores ao longo do dia
+  const organicVariation = Math.floor(dayMinutes / 8); // cresce com dinamismo ao longo do dia
   const targetCount = BASE_FOLLOWERS + organicVariation;
 
-  let currentCount = Math.max(0, targetCount - 120); // começa ligeiramente abaixo para a animação
-  const duration = 1800; // 1.8 segundos de animação inicial
+  let currentCount = Math.max(0, targetCount - 100); // começa ligeiramente abaixo para a animação
+  const duration = 1200; // 1.2 segundos de animação inicial rápida
   const startTime = performance.now();
 
   function formatNumber(num) {
@@ -844,7 +844,7 @@ if (catParam) {
       requestAnimationFrame(updateCounter);
     } else {
       counterEl.textContent = formatNumber(targetCount);
-      // Pulso orgânico sutil a cada 45-90 segundos (novo seguidor engajando)
+      // Pulso orgânico mais ativo a cada 12 a 20 segundos (comunidade crescendo)
       setupOrganicTick(targetCount);
     }
   }
@@ -852,7 +852,7 @@ if (catParam) {
   function setupOrganicTick(count) {
     let runningCount = count;
     function scheduleNext() {
-      const delay = Math.floor(Math.random() * (90000 - 45000)) + 45000;
+      const delay = Math.floor(Math.random() * (20000 - 12000)) + 12000;
       setTimeout(() => {
         runningCount += 1;
         if (counterEl) {
@@ -861,7 +861,7 @@ if (catParam) {
           counterEl.style.color = '#4ade80';
           setTimeout(() => {
             if (counterEl) counterEl.style.color = '#ffffff';
-          }, 600);
+          }, 700);
         }
         scheduleNext();
       }, delay);

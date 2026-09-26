@@ -111,18 +111,19 @@ export default function App() {
   const popularArticles = useMemo(() => ARTICLES_DATA.filter((a) => a.popular).slice(0, 3), []);
 
   // Contador de seguidores animado com efeito "Ao Vivo" (Instagram @curiosidades.incriveis6)
-  const [followerCount, setFollowerCount] = useState<number>(55900);
+  const [followerCount, setFollowerCount] = useState<number>(56200);
   const [isCounterHighlighted, setIsCounterHighlighted] = useState<boolean>(false);
 
   useEffect(() => {
-    const baseFollowers = 55940;
+    const baseFollowers = 56200;
     const now = new Date();
     const dayMinutes = now.getHours() * 60 + now.getMinutes();
-    const organicVariation = Math.floor(dayMinutes / 18);
+    // Variação orgânica acompanhando o crescimento ao longo do dia
+    const organicVariation = Math.floor(dayMinutes / 8);
     const target = baseFollowers + organicVariation;
 
-    const startVal = Math.max(0, target - 120);
-    const duration = 1800;
+    const startVal = Math.max(0, target - 100);
+    const duration = 1200; // animação inicial mais dinâmica
     const startTime = performance.now();
 
     let animationFrameId: number;
@@ -143,16 +144,23 @@ export default function App() {
 
     animationFrameId = requestAnimationFrame(update);
 
-    // Micro-incremento sutil a cada 60s simulando novo engajamento
-    const interval = setInterval(() => {
-      setFollowerCount((prev) => prev + 1);
-      setIsCounterHighlighted(true);
-      setTimeout(() => setIsCounterHighlighted(false), 600);
-    }, 60000);
+    // Micro-incrementos mais rápidos (a cada 12 a 20 segundos) simulando novos seguidores reais
+    let timeoutId: number;
+    const scheduleNextTick = () => {
+      const randomInterval = Math.floor(Math.random() * (20000 - 12000)) + 12000; // 12s a 20s
+      timeoutId = window.setTimeout(() => {
+        setFollowerCount((prev) => prev + 1);
+        setIsCounterHighlighted(true);
+        setTimeout(() => setIsCounterHighlighted(false), 700);
+        scheduleNextTick();
+      }, randomInterval);
+    };
+
+    scheduleNextTick();
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      clearInterval(interval);
+      clearTimeout(timeoutId);
     };
   }, []);
 

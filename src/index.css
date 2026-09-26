@@ -352,12 +352,12 @@ button {
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: 400px;
+  min-height: 310px;
   display: flex;
   align-items: center;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  padding: 30px 0 35px;
+  padding: 20px 0 24px;
 }
 
 .hero-background {
@@ -388,7 +388,7 @@ button {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  max-width: 720px;
+  max-width: 650px;
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -402,10 +402,10 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin: 0 0 12px 0;
+  margin: 0 0 8px 0;
   padding: 0;
   color: var(--blue) !important;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -415,7 +415,7 @@ button {
 
 .eyebrow span {
   display: inline-block;
-  width: 24px;
+  width: 22px;
   height: 2px;
   background: currentColor;
 }
@@ -438,24 +438,24 @@ h1, h2, h3 {
 }
 
 h1 {
-  max-width: 700px;
-  margin: 0 0 14px 0;
+  max-width: 640px;
+  margin: 0 0 10px 0;
   padding: 0;
-  font-size: clamp(1.95rem, 3.8vw, 3.2rem);
-  line-height: 1.05;
-  letter-spacing: -0.045em;
+  font-size: clamp(1.6rem, 3.1vw, 2.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
   color: #ffffff;
   text-align: left;
   align-self: flex-start;
 }
 
 .hero-copy {
-  max-width: 520px;
-  margin: 0 0 20px 0;
+  max-width: 480px;
+  margin: 0 0 16px 0;
   padding: 0;
   color: #d6deed;
-  font-size: 0.94rem;
-  line-height: 1.58;
+  font-size: 0.88rem;
+  line-height: 1.5;
   text-align: left;
   align-self: flex-start;
 }
@@ -1638,7 +1638,7 @@ h1 {
 
   .hero {
     min-height: auto;
-    padding: 50px 0 35px;
+    padding: 24px 0 20px;
     align-items: flex-start;
   }
 
@@ -1647,11 +1647,18 @@ h1 {
     max-width: 100%;
   }
 
+  .hero-content h1 {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    line-height: 1.1;
+  }
+
   .hero-stat {
     position: static;
-    margin-top: 25px;
+    margin-top: 18px;
     align-self: flex-start;
     display: inline-flex;
+    padding: 8px 14px;
+    font-size: 0.82rem;
   }
 
   .section {
@@ -1768,7 +1775,7 @@ h1 {
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
 }
 
