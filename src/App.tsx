@@ -373,35 +373,36 @@ export default function App() {
                     Ver todos os artigos
                   </button>
                 </div>
-              </div>
-              <a
-                className="hero-stat"
-                href="https://www.instagram.com/curiosidades.incriveis6"
-                target="_blank"
-                rel="noreferrer"
-                title="Ver comunidade oficial no Instagram @curiosidades.incriveis6"
-              >
-                <div className="hero-stat-info">
-                  <div className="hero-stat-header">
-                    <strong
-                      style={{
-                        color: isCounterHighlighted ? '#4ade80' : '#ffffff',
-                        transition: 'color 0.4s ease',
-                      }}
-                    >
-                      +{followerCount.toLocaleString('pt-BR')}
-                    </strong>
-                    <div className="hero-stat-live">
-                      <span className="live-dot" aria-hidden="true"></span>
-                      <span>AO VIVO</span>
+
+                <a
+                  className="hero-stat"
+                  href="https://www.instagram.com/curiosidades.incriveis6"
+                  target="_blank"
+                  rel="noreferrer"
+                  title="Ver comunidade oficial no Instagram @curiosidades.incriveis6"
+                >
+                  <div className="hero-stat-info">
+                    <div className="hero-stat-header">
+                      <strong
+                        style={{
+                          color: isCounterHighlighted ? '#4ade80' : '#ffffff',
+                          transition: 'color 0.4s ease',
+                        }}
+                      >
+                        +{followerCount.toLocaleString('pt-BR')}
+                      </strong>
+                      <div className="hero-stat-live">
+                        <span className="live-dot" aria-hidden="true"></span>
+                        <span>AO VIVO</span>
+                      </div>
                     </div>
+                    <span className="hero-stat-label">mentes curiosas no Instagram</span>
                   </div>
-                  <span className="hero-stat-label">mentes curiosas no Instagram</span>
-                </div>
-                <span className="hero-stat-arrow" aria-hidden="true">
-                  ↗
-                </span>
-              </a>
+                  <span className="hero-stat-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </div>
             </section>
 
             {/* Em Alta Section */}

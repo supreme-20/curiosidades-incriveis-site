@@ -489,12 +489,12 @@ h1 {
 .hero-stat {
   position: absolute;
   right: max(24px, calc((100% - 1180px) / 2));
-  bottom: 30px;
-  display: flex;
+  bottom: 24px;
+  display: inline-flex;
   gap: 13px;
   align-items: center;
   padding: 10px 18px 10px 16px;
-  background: rgba(11, 23, 44, 0.65);
+  background: rgba(11, 23, 44, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -503,6 +503,15 @@ h1 {
   text-decoration: none;
   color: inherit;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  z-index: 10;
+}
+
+@media (max-width: 900px) {
+  .hero-stat {
+    position: static;
+    margin-top: 24px;
+    align-self: flex-start;
+  }
 }
 
 .hero-stat:hover {
@@ -1640,16 +1649,21 @@ h1 {
   }
 
   .hero {
-    min-height: 580px;
+    min-height: auto;
+    padding: 50px 0 35px;
+    align-items: flex-start;
   }
 
   .hero-content {
-    padding-bottom: 110px;
+    padding-bottom: 0;
+    max-width: 100%;
   }
 
   .hero-stat {
-    right: 20px;
-    bottom: 25px;
+    position: static;
+    margin-top: 25px;
+    align-self: flex-start;
+    display: inline-flex;
   }
 
   .section {
@@ -1746,13 +1760,14 @@ h1 {
 @media (max-width: 480px) {
   .hero-buttons {
     flex-direction: column;
-    width: 100%;
-    gap: 10px;
+    width: auto;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .hero-buttons .button {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    justify-content: flex-start;
   }
 
   .header-actions .instagram-button,
