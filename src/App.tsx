@@ -345,7 +345,7 @@ export default function App() {
             <section className="hero" id="inicio">
               <div className="hero-background" role="img" aria-label="Curiosidades Incríveis Banner"></div>
               <div className="container hero-content">
-                <p className="eyebrow">
+                <p className="eyebrow" id="IDColorBlue">
                   <span></span> em destaque
                 </p>
                 <h1>O universo está cheio de coisas que parecem impossíveis.</h1>

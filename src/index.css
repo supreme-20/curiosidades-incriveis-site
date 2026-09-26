@@ -352,11 +352,12 @@ button {
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: 620px;
+  min-height: 480px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
+  padding: 40px 0 50px;
 }
 
 .hero-background {
@@ -367,7 +368,7 @@ button {
     linear-gradient(90deg, var(--bg) 4%, color-mix(in srgb, var(--bg) 85%, transparent) 46%, color-mix(in srgb, var(--bg) 35%, transparent)),
     linear-gradient(0deg, var(--bg) 0%, transparent 60%),
     url("/images/banner-curiosidades-incriveis.png") center/cover no-repeat;
-  filter: saturate(1.15) contrast(1.05);
+  filter: saturate(1.15) contrast(1.05) blur(2.6px);
   transform: scale(1.02);
 }
 
@@ -383,8 +384,13 @@ button {
 }
 
 .hero-content {
-  padding-bottom: 85px;
-  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 780px;
+  padding: 10px 0;
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow,
@@ -393,10 +399,10 @@ button {
   align-items: center;
   gap: 8px;
   margin: 0 0 14px;
-  color: var(--blue);
-  font-size: 0.74rem;
+  color: var(--blue) !important;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -407,8 +413,13 @@ button {
   background: currentColor;
 }
 
+#color-blue,
+#IDColorBlue {
+  color: var(--blue) !important;
+}
+
 .eyebrow.accent {
-  color: var(--yellow);
+  color: var(--yellow) !important;
 }
 
 h1, h2, h3, p {
@@ -420,19 +431,20 @@ h1, h2, h3 {
 }
 
 h1 {
-  max-width: 780px;
-  margin-bottom: 20px;
-  font-size: clamp(2.6rem, 5.8vw, 5.2rem);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  max-width: 740px;
+  margin-bottom: 16px;
+  font-size: clamp(2.2rem, 4.4vw, 3.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  color: #ffffff;
 }
 
 .hero-copy {
-  max-width: 600px;
-  margin-bottom: 30px;
+  max-width: 540px;
+  margin-bottom: 24px;
   color: #d6deed;
-  font-size: 1.08rem;
-  line-height: 1.7;
+  font-size: 0.98rem;
+  line-height: 1.62;
 }
 
 .hero-buttons {
